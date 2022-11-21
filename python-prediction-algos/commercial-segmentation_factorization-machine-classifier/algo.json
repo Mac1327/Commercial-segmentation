@@ -32,17 +32,26 @@
           "gridParam": true
         },
         {
-          "name": "loss",
-          "label": "loss",
-          "description": "Which loss function to use. logistic: L(y, p) = log(1 + exp(-yp))  squared hinge: L(y, p) = max(1 - yp, 0)²   squared: L(y, p) = 0.5 * (y - p)²",
-          "defaultValue": "squared_hinge",
-          "type": "MULTISELECT",
-          "gridParam": true,
-          "selectChoices": [
-            { "value": "logistic", "label": "logistic"},
-            { "value": "squared_hinge", "label": "squared_hinge"},
-            { "value": "squared", "label": "squared"}
-          ]
+            "name": "loss",
+            "label": "loss",
+            "description": "Which loss function to use. logistic: L(y, p) = log(1 + exp(-yp)) squared hinge: L(y, p) = max(1 - yp, 0)²  squared: L(y, p) = 0.5 * (y - p)²",
+            "type": "MULTISELECT",
+            "defaultValue": ["squared_hinge"],
+            "selectChoices": [
+                {
+                    "value":"logistic",
+                    "label":"logistic"
+                },
+                {
+                    "value":"squared_hinge",
+                    "label":"squared_hinge"
+                },
+                {
+                    "value":"squared",
+                    "label": "squared"
+                }
+            ],
+            "gridParam": true
         },
         {
             "name": "n_components",
