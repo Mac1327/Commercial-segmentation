@@ -32,18 +32,6 @@
           "gridParam": true
         },
         {
-          "type": "MULTISELECT",
-          "name": "loss",
-          "label": "loss",
-          "defaultValue": "squared_hinge",
-          "gridParam": true,
-          "selectChoices": [
-            { "value": "logistic", "label": "logistic"},
-            { "value": "squared_hinge", "label": "squared_hinge"},
-            { "value": "squared", "label": "squared"}
-          ]
-        },
-        {
             "name": "n_components",
             "label": "n components",
             "description": "Number of basis vectors to learn, a.k.a. the dimension of the low-rank parametrization.",
