@@ -72,7 +72,7 @@
             "gridParam": true
         },
         {
-            "name": "tolerance",
+            "name": "tol",
             "label": "tolerance",
             "description": "Tolerance for the stopping condition.",
             "type": "DOUBLES",
