@@ -1,6 +1,6 @@
 # This file is the actual code for the custom Python algorithm commercial-segmentation_factorization-machine-classifier
 from dataiku.doctor.plugins.custom_prediction_algorithm import BaseCustomPredictionAlgorithm
-from sklearn.ensemble import AdaBoostRegressor
+from polylearn import FactorizationMachineClassifier
 
 class CustomPredictionAlgorithm(BaseCustomPredictionAlgorithm):    
     """
