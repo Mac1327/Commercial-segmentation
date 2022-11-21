@@ -21,7 +21,7 @@ class CustomPredictionAlgorithm(BaseCustomPredictionAlgorithm):
     """
     
     def __init__(self, prediction_type=None, params=None):        
-        self.clf = AdaBoostRegressor(random_state=params.get("random_state", None))
+        self.clf = FactorizationMachineClassifier()
         super(CustomPredictionAlgorithm, self).__init__(prediction_type, params)
     
     def get_clf(self):
