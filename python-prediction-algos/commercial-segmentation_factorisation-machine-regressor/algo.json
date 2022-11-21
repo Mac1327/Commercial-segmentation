@@ -1,0 +1,57 @@
+/* This file is the descriptor for the Custom Python Prediction algorithm commercial-segmentation_factorisation-machine-regressor */
+{
+    "meta" : {
+        "label": "Factorization Machine Regressor",
+        "description": "Factorization machine for regression (with squared loss)",
+        // https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-ok"
+    },
+    "predictionTypes": ["REGRESSION"],
+    "gridSearchMode": "MANAGED",
+    "supportsSampleWeights": true,
+    "acceptsSparseMatrix": false,
+    "params": [
+        {
+          "name": "degree",
+          "label": "degree",
+          "description": "[int >= 2] Degree of the polynomial. Corresponds to the order of feature interactions captured by the model. Currently only supports degrees up to 3.",
+          "type": "DOUBLES",
+          "defaultValue": [2,3],
+          "gridParam": true
+        },
+        {
+            "name": "n_components",
+            "label": "n components",
+            "description": "Number of basis vectors to learn, a.k.a. the dimension of the low-rank parametrization.",
+            "type": "DOUBLES",
+            "defaultValue": [2,3],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "max_iter",
+            "label": "max iter",
+            "description": "Maximum number of passes over the dataset to perform.",
+            "type": "DOUBLES",
+            "defaultValue": [100,1000],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "tolerance",
+            "label": "tolerance",
+            "description": "Tolerance for the stopping condition.",
+            "type": "DOUBLES",
+            "defaultValue": [0.000001],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "random_state",
+            "label": "Random state",
+            "description": "Using a fixed random seed allows for reproducible result.",
+            "type": "DOUBLE",
+            "defaultValue": 41
+        }      
+    ]
+}

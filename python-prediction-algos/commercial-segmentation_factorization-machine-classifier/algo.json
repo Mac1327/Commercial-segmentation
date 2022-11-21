@@ -1,0 +1,81 @@
+{
+    "meta" : {
+        "label": "Factorization Machine Classifier",
+        "description": "Factorization machine for classification.",
+        "icon": "icon-ok"
+    },
+    "predictionTypes": ["BINARY_CLASSIFICATION", "MULTICLASS"],
+    "gridSearchMode": "MANAGED",
+    "supportsSampleWeights": true,
+    "acceptsSparseMatrix": false,
+
+    /* params:
+    DSS will generate a formular from this list of requested parameters.
+    Your component code can then access the value provided by users using the "name" field of each parameter.
+
+    Available parameter types include:
+    STRING, INT, DOUBLE, BOOLEAN, DATE, SELECT, TEXTAREA, PRESET and others.
+
+    Besides, if the parameters are to be used to build the grid search, you must add a `gridParam` field and set it to true.
+
+    For the full list and for more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
+
+    Below is an example of parameters for an AdaBoost regressor from scikit learn.
+    */
+    "params": [
+        {
+          "name": "degree",
+          "label": "degree",
+          "description": "[int >= 2] Degree of the polynomial. Corresponds to the order of feature interactions captured by the model. Currently only supports degrees up to 3.",
+          "type": "DOUBLES",
+          "defaultValue": [2,3],
+          "gridParam": true
+        },
+        {
+          "type": "MULTISELECT",
+          "name": "loss",
+          "label": "loss",
+          "defaultValue": "squared_hinge",
+          "gridParam": true,
+          "selectChoices": [
+            { "value": "logistic", "label": "logistic"},
+            { "value": "squared_hinge", "label": "squared_hinge"},
+            { "value": "squared", "label": "squared"}
+          ]
+        },
+        {
+            "name": "n_components",
+            "label": "n components",
+            "description": "Number of basis vectors to learn, a.k.a. the dimension of the low-rank parametrization.",
+            "type": "DOUBLES",
+            "defaultValue": [2,3],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "max_iter",
+            "label": "max iter",
+            "description": "Maximum number of passes over the dataset to perform.",
+            "type": "DOUBLES",
+            "defaultValue": [100,1000],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "tolerance",
+            "label": "tolerance",
+            "description": "Tolerance for the stopping condition.",
+            "type": "DOUBLES",
+            "defaultValue": [0.000001],
+            "allowDuplicates": false,
+            "gridParam": true
+        },
+        {
+            "name": "random_state",
+            "label": "Random state",
+            "description": "Using a fixed random seed allows for reproducible result.",
+            "type": "DOUBLE",
+            "defaultValue": 41
+        }      
+    ]
+}
