@@ -39,7 +39,7 @@
         },
         {
             "name": "tolerance",
-            "label": "tolerance",
+            "label": "tol",
             "description": "Tolerance for the stopping condition.",
             "type": "DOUBLES",
             "defaultValue": [0.000001],
